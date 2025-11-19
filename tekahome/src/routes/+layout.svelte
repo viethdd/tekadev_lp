@@ -1,21 +1,4 @@
 <script lang="ts">
-	import GoogleFont, { getFontStyle } from "@svelte-web-fonts/google";
-	import type { GoogleFontDefinition, GoogleFontVariant } from "@svelte-web-fonts/google";
-	const fonts: GoogleFontDefinition[] = [
-		{
-			family: "Saira",
-			variants: [
-					"200","300","400","600","700","800","900"
-			],
-		},
-		{
-			family: "Roboto",
-			variants: [
-					"100",
-					"400italic"
-			],
-		},
-	];
 	
 	import Navbar from '$lib/components/topNav.svelte';
 	import favicon from '$lib/assets/favicon.svg';
@@ -28,21 +11,6 @@
    export let data;
 	const { navLinks } = data;
 </script>
-
-<svelte:head>
-	<link rel="icon" href={favicon} />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<!-- <link rel="preconnect" href="https://fonts.googleapis.com" /> -->
-	<!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
-	<!-- <GoogleFont fonts="{fonts}" display="swap" /> -->
-</svelte:head>
-
-<Navbar { navLinks } />
-<div class="main">
-<slot />
-</div>
-<Footer { navLinks } />
-
 <style>
 	body, footer {
 		width: 100vw;
@@ -53,3 +21,22 @@
 		background: rgba(255,0,0,.2);
 	}
 </style>
+
+<svelte:head>
+	<link rel="icon" href={favicon} />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- <link rel="preconnect" href="https://fonts.googleapis.com" /> -->
+	<!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
+	<!-- <GoogleFont fonts="{fonts}" display="swap" /> -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</svelte:head>
+
+<Navbar { navLinks } />
+<div class="main">
+<slot />
+</div>
+<Footer { navLinks } />
+

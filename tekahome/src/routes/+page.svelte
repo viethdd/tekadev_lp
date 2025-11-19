@@ -51,6 +51,7 @@ export let data;
          position: relative;
          h1 {
             text-transform: capitalize;
+            font-family: "Saira", sans-serif;
          }
          p {
          }
