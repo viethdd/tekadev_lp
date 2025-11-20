@@ -27,6 +27,6 @@ export async function load(params) {
          top: topLinks,
          footer: subLinks,
          contact: contactLinks
-      }
+      },
    }
 }

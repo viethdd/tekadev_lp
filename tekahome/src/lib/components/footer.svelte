@@ -6,7 +6,7 @@
 <footer class="flex flex-row justify-center lg:justify-between lg:w-10/12 flex-items">
    <div class="footer-top-container footer-section">
       <div class="logo flex justify-center flex-col text-center flex-item">
-         <a href="" class="text-center flex justify-center"><img class="w-18" src={favicon} alt=""></a>
+         <a href="#" class="text-center flex justify-center"><img class="w-18" src={favicon} alt=""></a>
          <p>Phần Mềm BĐS</p>
       </div>
       <ul class="primary flex-item">
@@ -36,9 +36,9 @@
       </ul>
    </div>
    <div class="footer-bottom-container flex flex-items footer-section">
-         <span>TekaDev® 2025</span>
-         <span>Powered By TekaGroup™</span>
-         <span>some placeholder</span>
+      <span>TekaDev® 2025</span>
+      <span>Powered By TekaGroup™</span>
+      <span>some placeholder</span>
    </div>
 </footer>
 

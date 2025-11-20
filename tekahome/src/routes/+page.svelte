@@ -1,4 +1,7 @@
-<script>
+<script lang='ts'>
+	import ProductFeaturesList from '$lib/components/product_features_list.svelte';
+   import WhyChoose from '$lib/components/why_choose.svelte';
+   
 // import { 
 //    Icon, 
 //    ArrowUp,
@@ -11,34 +14,137 @@ import {
   Phone, 
   ChevronDown,
   ArrowRight,
-  MouseIcon
-} from 'lucide-svelte';
+  MoveDown,
+  MouseIcon,
+  Table, Table2, MapIcon, ShieldCheck
 
+} from 'lucide-svelte';
 /** @type {import('./$types').PageData} */
 export let data;
+const { product_features } = data;
 </script>
 
 <section class="top-section flex flex-col justify-between">
    <div class="headline-wrapper flex flex-col justify-center sm:text-center align-middle">
-      <h1 class="headline-bold antialiased font-extrabold sm:text-3xl sm:text-center">GIẢI PHÁP PHẦN MỀM BẤT ĐỘNG SẢN</h1>
-      <p class="headline-caption">Trợ thủ đắc lực cho Quản lý Thông tin giỏ hàng</p>
-      <p class="headline-caption">Nâng tầm Chuyên nghiệp cho Môi giới và Doanh nghiệp</p>
-      <div class="call-to-actions">
-         <button class="secondary" name="Liên hệ">Liên Hệ</button>
-         <button class="primary" name="Xem Tính Năng">Xem Tính Năng</button>
+      <div class="xl-col-left portion-top">
+         <div class="product-logo-container">
+            <img src="" alt="" class="prod-tekareal-logo">
+            <p>Phần mềm quản lý bất động sản</p>
+         </div>
+         
+         <div class="product-tags-container">
+            <span class="product-tag">#thông tin</span>
+            <span class="product-tag">#chi tiết</span>
+            <span class="product-tag">#tìm kiếm</span>
+            <span class="product-tag">#bản đồ quy hoạch</span>
+            <span class="product-tag">#nhân sự</span>
+            <span class="product-tag">#công ty</span>
+            <span class="product-tag">#cá nhân</span>
+            <span class="product-tag">#bảng giá</span>
+         </div>
+      </div>
+
+      <div class="headline-photo xl-col-right">
+         <img src="" alt="">
+      </div>
+
+      <div class="headline-wrapper portion-bottom">
+         <h1 class="headline-bold antialiased font-extrabold sm:text-3xl sm:text-center">TỰ TIN CHỐT DEAL</h1>
+         <p class="headline-caption">Quản lý từng chi tiết dữ liệu bất động sản sẽ mang đến sự tiện lợi và tự tin khi tư vấn cho khách hàng</p>
+         <!-- <p class="headline-caption">Nâng tầm Chuyên nghiệp cho Môi giới và Doanh nghiệp</p> -->
+         <div class="call-to-actions">
+            <!-- <button class="secondary" name="Liên hệ">Liên Hệ</button> -->
+            <button class="primary" name="Xem Tính Năng"><MoveDown class="w-6 h-6 text-black-900" />Khám Phá</button>
+         </div>
+      </div>
+      
+   </div>
+   
+</section>
+
+<!-- section 2 -->
+<section class="second-section flex flex-col justify-between">
+   <div class="eyebrown-title">
+      <h3>Giới thiệu tính năng</h3>
+   </div>
+
+   <div class="section-main">
+      <div class="xl-col-left">
+         <div class="section-detail-wrapper">
+            <h2 class="tagline">Công cụ hỗ trợ dành cho môi giới chuyên nghiệp</h2>
+            <ul>
+               <li>Thao tác nhập thông tin và quản lý kho dữ liệu thông tin bất động sản nhanh chóng.</li>
+               <li>Tìm kiếm đa năng với bộ lọc linh hoạt.</li>
+               <li>Bản đồ quy hoạch Tp.HCM (+Bình Dương, Vũng Tàu)</li>
+               <li>Tối ưu hoá giao diện trên tất cả màn hình thiết bị.</li>
+            </ul>
+         </div>
+      </div>
+      <div class="xl-col-right features-wrapper">
+         <div class="feature-col">
+            <Table class="w-6 h-6"></Table>
+            <span>Tính năng quản lý </span>
+            <ChevronDown class="w-6 h-6 text-orange-600" />
+            <div class="overlay-bottom"></div>
+         </div>
+         <div class="feature-col">
+            <MapIcon class="w-6 h-6"></MapIcon>
+            <span>Bản đồ quy hoạch</span>
+            <ChevronDown class="w-6 h-6 text-orange-600" />
+            <div class="overlay-bottom"></div>
+         </div>
+         <div class="feature-col">
+            <ShieldCheck class="w-6 h-6"></ShieldCheck>
+            <span>Tính năng bảo mật</span>
+            <ChevronDown class="w-6 h-6 text-orange-600" />
+            <div class="overlay-bottom"></div>
+         </div>
       </div>
    </div>
-   <div class="explore text-center">
-      <a href="#">
-         <p>Khám Phá Tính Năng</p>
-         <MouseIcon class="w-6 h-6 text-black-900" />
-      </a>
+</section>
+
+<!-- section 3 -->
+<section class="third-section flex flex-col justify-between">
+   <div class="eyebrown-title">
+      <h3>Giới thiệu tính năng</h3>
+   </div>
+   <div class="section-main">
+      <div class="xs-row-top xl-col-left">
+         <div class="tab-feature"></div>
+         <div class="tab-feature highlight">
+            <ProductFeaturesList { product_features } />
+         </div>
+         <div class="tab-feature"></div>
+      </div>
+      <div class="xs-row-bot xl-col-right">
+         <img src="" alt="">
+      </div>
+   </div>
+</section>
+
+<!-- section 4 -->
+<section class="fourth-section flex flex-col justify-between"> 
+   <div class="eyebrown-title">
+      <h3>Dễ dàng mở rộng</h3>
+      <h3>năng suất & tiềm năng</h3>
+   </div>
+   <div class="section-main">
+      <div class="xs-row-top xl-col-left">
+         <div class="tab-feature"></div>
+         <div class="tab-feature highlight">
+            <ProductFeaturesList { product_features } />
+         </div>
+         <div class="tab-feature"></div>
+      </div>
+      <div class="xs-row-bot xl-col-right">
+         <img src="" alt="">
+      </div>
    </div>
 </section>
 
 <style>
    section.top-section {
-      height: 90vh;
+      height: auto;
       background-color: oklch(90,12,1);
       margin: 0 auto;
       vertical-align: middle;
@@ -47,10 +153,11 @@ export let data;
          font-family: Arial, Helvetica, sans-serif;
          margin: auto;
          vertical-align: middle;
-         /* text-align: center; */
+         text-align: left;
          position: relative;
          h1 {
             text-transform: capitalize;
+            font-weight: bold;
             font-family: "Saira", sans-serif;
          }
          p {
@@ -58,18 +165,6 @@ export let data;
          button{
             cursor: pointer;
          }
-      }
-      .explore {
-         position: relative;
-         bottom: 1vh;
-         text-align: center;
-         margin:  0 auto;
-      }
-      .explore a {
-         display: flex;
-         justify-content: center;
-         align-items: center;
-         flex-direction: column;
       }
    }
 </style>

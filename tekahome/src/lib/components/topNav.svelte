@@ -5,7 +5,7 @@
 
 <div class="top-nav-container">
    <div class="logo flex justify-center">
-   <a href="" class="text-center">
+   <a href="#" class="text-center">
       <img class="w-12" src={favicon} alt="">
    </a>
 </div>
@@ -19,7 +19,6 @@
    </ul>
 </nav>
 </div>
-
 
 <style>
    .top-nav-container {
