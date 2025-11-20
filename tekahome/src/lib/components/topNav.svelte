@@ -1,6 +1,7 @@
 <script>
    import favicon from '$lib/assets/favicon.svg';
-   let { navLinks } = $props();
+   // let { nav_links } = $props();
+   export let items;
 </script>
 
 <div class="top-nav-container">
@@ -11,7 +12,7 @@
 </div>
 <nav class="top-nav">
    <ul>
-      {#each navLinks.top as link (link.href)}
+      {#each items.top as link (link.href)}
          <li>
             <a href={link.href}>{link.label}</a>
          </li>

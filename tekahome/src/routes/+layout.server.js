@@ -1,6 +1,7 @@
 /**
  * @type {import('./$types').LayoutServerLoad}
  */
+import globalContent from '../../src/data/global_content.json';
 export async function load(params) {
    const topLinks = [
       // {label:'Home', href: '/'},
@@ -16,17 +17,20 @@ export async function load(params) {
       {label: 'Chính sách Bảo mật', href: '/tos'},
       {label: 'Chính sách Sử dụng', href: '/tou'},
    ]
-
    const contactLinks = [
       {label: 'Liên hệ', href: '#contact'},
       {label: 'Email', href: 'mailto:tekadev@gmail.com'},
    ]
-
    return {
-      navLinks: {
+      nav_links: {
          top: topLinks,
          footer: subLinks,
          contact: contactLinks
       },
+      footer_content: {
+         contact: globalContent.contact,
+         sitemap: globalContent.sitemap,
+         branding: globalContent.branding
+      }
    }
 }

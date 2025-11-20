@@ -2,14 +2,13 @@
 	import Navbar from '$lib/components/topNav.svelte';
 	import favicon from '$lib/assets/favicon.svg';
 	import Footer from '$lib/components/footer.svelte';
-	import ProductFeaturesList from '$lib/components/home_productFeaturesList.svelte';
-
+	// import ProductFeaturesList from '$lib/components/home_productFeaturesList.svelte';
 	/** @type {{ navLinks: 
 	 * 				top: { href: string, label:string }[], 
-	 * 				footer: {href:string, label:string}[]
+
 	 * }} */
    export let data;
-	const { navLinks} = data;
+	const { nav_links, footer_content } = data;
 </script>
 
 
@@ -22,11 +21,11 @@
 
 </svelte:head>
 
-<Navbar { navLinks } />
+<Navbar items={ nav_links } />
 <div class="main">
 <slot />
 </div>
-<Footer { navLinks } />
+<Footer items={ footer_content } />
 
 <style>
 </style>

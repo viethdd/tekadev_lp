@@ -63,8 +63,10 @@
 
 <!-- section 2 -->
 <section class="second-section flex flex-col justify-between">
-   <div class="eyebrown-title">
-      <h3>Giới thiệu tính năng</h3>
+   <div class="section-title-wrapper">
+      <div class="eyebrown-title">
+         <h3>Giới thiệu tính năng</h3>
+      </div>
    </div>
 
    <div class="section-main">
@@ -108,8 +110,10 @@
 
 <!-- section 3 -->
 <section class="third-section flex flex-col justify-between">
-   <div class="eyebrown-title">
-      <h4>Giới thiệu tính năng</h4>
+   <div class="section-title-wrapper">
+      <div class="eyebrown-title">
+         <h4>Giới thiệu tính năng</h4>
+      </div>
    </div>
    <div class="section-main">
       <div class="xs-row-top xl-col-left">
@@ -126,8 +130,10 @@
 
 <!-- section 4 -->
 <section class="fourth-section flex flex-col justify-between"> 
-   <div class="eyebrown-title">
-      <h4>Giới thiệu tính năng</h4>
+   <div class="section-title-wrapper">
+      <div class="eyebrown-title">
+         <h4>Giới thiệu tính năng</h4>
+      </div>
    </div>
    <div class="section-main">
       <div class="tag-line">
@@ -146,8 +152,10 @@
 
 <!-- section 5 -->
 <section class="fifth-section flex flex-col justify-between"> 
-   <div class="eyebrown-title">
-      <h3>Vì sao đối tác chọn TekaReal</h3>
+   <div class="section-title-wrapper">
+      <div class="eyebrown-title">
+         <h3>Vì sao đối tác chọn TekaReal</h3>
+      </div>
    </div>
    <div class="section-main">
       <div class="tagline">
@@ -167,9 +175,23 @@
 
 <!-- section 6 -->
 <section class="sixth-section flex flex-col justify-between"> 
-   <div class="eyebrown-title">
-      <h3>Các gói sản phẩm</h3>
+   <div class="section-title-wrapper">
+      <div class="eyebrown-title">
+         <h3>Các gói sản phẩm</h3>
+      </div>
+      <div class="sidebar xl-col-right">
+         <span class="btn-secondary">
+            <a href="#">Tải bản báo giá (PDF)</a>
+         </span>
+         <span class="btn-secondary">
+            <a href="#">Liên hệ đặt server riêng</a>
+         </span>
+         <span class="btn-secondary">
+            <a href="#">Gói siêu doanh nghiệp</a>
+         </span>
+      </div>
    </div>
+
    <div class="section-main">
       <div class="tagline">
       </div>
