@@ -1,9 +1,9 @@
-<script lang='ts'>
+<script lang="ts">
 	import ProductFeaturesList from '$lib/components/home_productFeaturesList.svelte';
    import WhyChoose from '$lib/components/home_whyChoose.svelte';
    import HomeServices from '$lib/components/home_services.svelte';
    import HomePricing from '$lib/components/home_pricing.svelte';
-
+   import { MetaTags } from 'svelte-meta-tags';
    import {
    Map, 
    DollarSign, 
@@ -13,8 +13,11 @@
    MoveDown,
    MouseIcon,
    Table, Table2, MapIcon, ShieldCheck
-
    } from 'lucide-svelte';
+
+   const pageUrl = "/";
+	const pageTitle = "TekaReal - Phần Mềm Giải Pháp Bất Động Sản";
+	const pageDescription = "TekaReal - Phần Mềm Giải Pháp Bất Động Sản"
    /** @type {import('./$types').PageData} */
    export let data;
    const { product_features, 
@@ -22,6 +25,10 @@
    home_services,
    home_pricing } = data;
 </script>
+
+<svelte:head>
+  <MetaTags title={pageTitle} description={pageDescription} />
+</svelte:head>
 
 <section class="top-section flex flex-col justify-between">
    <div class="headline-wrapper flex flex-col justify-center sm:text-center align-middle">
