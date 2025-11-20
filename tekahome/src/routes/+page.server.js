@@ -1,19 +1,25 @@
 /**
  * @type {import('./$types').PageServerLoad}
  */
-import homeFeatures from '$data/home_01.json'
-import WhyChoose from '$lib/components/why_choose.svelte'
+import homeData from '$data/home_01.json'
 export async function load(params) {
-   
+
    return {
       // object type
       product_features: { 
-         quanly: homeFeatures.quanly, 
-         bando: homeFeatures.bando,
-         baomat: homeFeatures.baomat 
+         quanly: homeData.quanly, 
+         bando: homeData.bando,
+         baomat: homeData.baomat 
       },
       why_choose: {
-         why: homeFeatures.whychoose
+         quanly: homeData.whychoose
+      },
+      home_services: {
+         service: homeData.services,
+         customers: homeData.customers
+      },
+      home_pricing: {
+         pricing: homeData.pricing
       }
    }
 }

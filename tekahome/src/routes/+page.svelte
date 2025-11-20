@@ -1,27 +1,26 @@
 <script lang='ts'>
-	import ProductFeaturesList from '$lib/components/product_features_list.svelte';
-   import WhyChoose from '$lib/components/why_choose.svelte';
-   
-// import { 
-//    Icon, 
-//    ArrowUp,
-//    ArrowDown,
-// } from "svelte-hero-icons";
+	import ProductFeaturesList from '$lib/components/home_productFeaturesList.svelte';
+   import WhyChoose from '$lib/components/home_whyChoose.svelte';
+   import HomeServices from '$lib/components/home_services.svelte';
+   import HomePricing from '$lib/components/home_pricing.svelte';
 
-import {
-  Map, 
-  DollarSign, 
-  Phone, 
-  ChevronDown,
-  ArrowRight,
-  MoveDown,
-  MouseIcon,
-  Table, Table2, MapIcon, ShieldCheck
+   import {
+   Map, 
+   DollarSign, 
+   Phone, 
+   ChevronDown,
+   ArrowRight,
+   MoveDown,
+   MouseIcon,
+   Table, Table2, MapIcon, ShieldCheck
 
-} from 'lucide-svelte';
-/** @type {import('./$types').PageData} */
-export let data;
-const { product_features } = data;
+   } from 'lucide-svelte';
+   /** @type {import('./$types').PageData} */
+   export let data;
+   const { product_features, 
+   why_choose, 
+   home_services,
+   home_pricing } = data;
 </script>
 
 <section class="top-section flex flex-col justify-between">
@@ -71,8 +70,12 @@ const { product_features } = data;
    <div class="section-main">
       <div class="xl-col-left">
          <div class="section-detail-wrapper">
-            <h2 class="tagline">Công cụ hỗ trợ dành cho môi giới chuyên nghiệp</h2>
-            <ul>
+            <div class="tagline">
+               <h3>
+                  Công cụ hỗ trợ dành cho môi giới chuyên nghiệp
+               </h3>
+            </div>
+            <ul class="details">
                <li>Thao tác nhập thông tin và quản lý kho dữ liệu thông tin bất động sản nhanh chóng.</li>
                <li>Tìm kiếm đa năng với bộ lọc linh hoạt.</li>
                <li>Bản đồ quy hoạch Tp.HCM (+Bình Dương, Vũng Tàu)</li>
@@ -106,7 +109,7 @@ const { product_features } = data;
 <!-- section 3 -->
 <section class="third-section flex flex-col justify-between">
    <div class="eyebrown-title">
-      <h3>Giới thiệu tính năng</h3>
+      <h4>Giới thiệu tính năng</h4>
    </div>
    <div class="section-main">
       <div class="xs-row-top xl-col-left">
@@ -114,7 +117,6 @@ const { product_features } = data;
          <div class="tab-feature highlight">
             <ProductFeaturesList { product_features } />
          </div>
-         <div class="tab-feature"></div>
       </div>
       <div class="xs-row-bot xl-col-right">
          <img src="" alt="">
@@ -125,20 +127,59 @@ const { product_features } = data;
 <!-- section 4 -->
 <section class="fourth-section flex flex-col justify-between"> 
    <div class="eyebrown-title">
-      <h3>Dễ dàng mở rộng</h3>
-      <h3>năng suất & tiềm năng</h3>
+      <h4>Giới thiệu tính năng</h4>
    </div>
    <div class="section-main">
+      <div class="tag-line">
+         <h3>Dễ dàng mở rộng</h3>
+         <h3>năng suất & tiềm năng</h3>
+      </div>
       <div class="xs-row-top xl-col-left">
-         <div class="tab-feature"></div>
-         <div class="tab-feature highlight">
-            <ProductFeaturesList { product_features } />
-         </div>
+            <WhyChoose items = { why_choose } />
          <div class="tab-feature"></div>
       </div>
       <div class="xs-row-bot xl-col-right">
          <img src="" alt="">
       </div>
+   </div>
+</section>
+
+<!-- section 5 -->
+<section class="fifth-section flex flex-col justify-between"> 
+   <div class="eyebrown-title">
+      <h3>Vì sao đối tác chọn TekaReal</h3>
+   </div>
+   <div class="section-main">
+      <div class="tagline">
+         <h3>
+            dịch vụ chăm sóc khách hàng
+         </h3>
+      </div>
+      <div class="details">
+         <HomeServices items={ home_services } />
+      </div>
+      </div>
+
+      <div class="xs-row-bot xl-col-right">
+         <img src="" alt="">
+      </div>
+</section>
+
+<!-- section 6 -->
+<section class="sixth-section flex flex-col justify-between"> 
+   <div class="eyebrown-title">
+      <h3>Các gói sản phẩm</h3>
+   </div>
+   <div class="section-main">
+      <div class="tagline">
+      </div>
+      <div class="details">
+         <HomePricing items={ home_pricing } />
+      </div>
+   </div>
+
+   <div class="xs-row-bot xl-col-right">
+      <img src="" alt="">
    </div>
 </section>
 

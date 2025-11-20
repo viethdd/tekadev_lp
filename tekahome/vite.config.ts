@@ -28,5 +28,13 @@ export default defineConfig({
       ],
     },
   },
+  server: {
+    fs: {
+      // 🔑 Add the absolute path to the directory containing 'assets'
+      allow: [
+        path.resolve(__dirname, '..', 'static/assets/img'),
+      ],
+    },
+  },
 });
 

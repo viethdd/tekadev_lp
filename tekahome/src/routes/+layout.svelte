@@ -2,7 +2,7 @@
 	import Navbar from '$lib/components/topNav.svelte';
 	import favicon from '$lib/assets/favicon.svg';
 	import Footer from '$lib/components/footer.svelte';
-	import ProductFeaturesList from '$lib/components/product_features_list.svelte';
+	import ProductFeaturesList from '$lib/components/home_productFeaturesList.svelte';
 
 	/** @type {{ navLinks: 
 	 * 				top: { href: string, label:string }[], 
