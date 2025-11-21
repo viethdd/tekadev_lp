@@ -1,25 +1,16 @@
 /**
  * @type {import('./$types').PageServerLoad}
  */
-import homeData from '$data/home_01.json'
+import homeSectionsData from '$data/home_sections.json'
 export async function load(params) {
 
    return {
       // object type
-      product_features: { 
-         quanly: homeData.quanly, 
-         bando: homeData.bando,
-         baomat: homeData.baomat 
-      },
-      why_choose: {
-         quanly: homeData.whychoose
-      },
-      home_services: {
-         service: homeData.services,
-         customers: homeData.customers
-      },
-      home_pricing: {
-         pricing: homeData.pricing
-      }
+      top_section: homeSectionsData.topSection,
+      intro_section: homeSectionsData.introSection,
+      intro_features: homeSectionsData.introEachFeatures,
+      why_choose: homeSectionsData.whynewchoose,
+      home_services: homeSectionsData.whycustomerchoose,
+      home_pricing: homeSectionsData.pricing 
    }
 }

@@ -1,12 +1,15 @@
 <script>
-   import favicon from '$lib/assets/favicon.svg';
+   import globalContent from '../../data/global_content.json';
+   const brandingContent = globalContent.branding
+   const tekadev_item = brandingContent.find(item => item.title=="tekadev")
+	const tekadev_logo_path = tekadev_item?.imagePath
    export let items;
 </script>
 
 <div class="top-nav-container">
    <div class="logo flex justify-center">
    <a href="#" class="text-center">
-      <img class="w-12" src={favicon} alt="">
+      <img class="w-12" src={tekadev_logo_path} alt="" width={tekadev_item?.topSize} height="auto">
    </a>
 </div>
 <nav class="top-nav">

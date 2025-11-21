@@ -6,12 +6,18 @@ import { slugify } from '$lib/utils/slugify';
 
 export async function load(params) {
    const selectedTopLinks = globalContent.sitemap.filter(item => item.topNav == "yes")
-   const topLinks = selectedTopLinks.map(
+   const sortedTopLinks = selectedTopLinks.sort(
+      (a,b) => {
+         const orderA = a.topNavOrder || 9999;
+         const orderB = b.topNavOrder || 9999;
+         return orderA - orderB
+      });
+   const topLinks = sortedTopLinks.map(
       link => ({
          label: link.title,
-         href: slugify(link.title)
-      })
-   )
+         href: slugify(link.title),
+         order: link.topNavOrder
+      }));
 
    const subLinks = [
       {label: 'Blog', href: '/blog'},
