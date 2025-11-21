@@ -2,13 +2,12 @@
 	import Navbar from '$lib/components/topNav.svelte';
 	import favicon from '$lib/assets/favicon.svg';
 	import Footer from '$lib/components/footer.svelte';
-	import {MetaTags} from 'svelte-meta-tags';
+	import SvelteSeo from 'svelte-seo';
 	/** @type {{ navLinks: 
 	 * 				top: { href: string, label:string }[], 
-
+	 
 	 * }} */
-	
-   export let data;
+	export let data;
 	const { nav_links, footer_content } = data;
 	const siteTitle = "TekaDev Home"
 	const siteDescription = "TekaReal - Phần Mềm Giải Pháp Bất Động Sản"
@@ -16,7 +15,21 @@
 </script>
 
 <svelte:head>
-	<MetaTags title={siteTitle} description={siteDescription} />
+	<SvelteSeo 
+    title={siteTitle}
+    description={siteDescription}
+    openGraph={{
+      title: siteTitle,
+      url: siteUrl,
+      type: 'website',
+      images: [{ url: `${siteUrl}/default-share-image.jpg` }]
+    }}
+    twitter={{
+      card: 'summary_large_image',
+      site: '@YourHandle',
+      title: siteTitle,
+    }}
+  />
 	<link rel="icon" href={favicon} />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">

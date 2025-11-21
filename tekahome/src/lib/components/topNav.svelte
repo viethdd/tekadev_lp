@@ -1,6 +1,5 @@
 <script>
    import favicon from '$lib/assets/favicon.svg';
-   // let { nav_links } = $props();
    export let items;
 </script>
 

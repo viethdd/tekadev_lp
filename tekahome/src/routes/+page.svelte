@@ -3,7 +3,6 @@
    import WhyChoose from '$lib/components/home_whyChoose.svelte';
    import HomeServices from '$lib/components/home_services.svelte';
    import HomePricing from '$lib/components/home_pricing.svelte';
-   import { MetaTags } from 'svelte-meta-tags';
    import {
    Map, 
    DollarSign, 
@@ -14,7 +13,7 @@
    MouseIcon,
    Table, Table2, MapIcon, ShieldCheck
    } from 'lucide-svelte';
-
+   import SvelteSeo from 'svelte-seo';
    const pageUrl = "/";
 	const pageTitle = "TekaReal - Phần Mềm Giải Pháp Bất Động Sản";
 	const pageDescription = "TekaReal - Phần Mềm Giải Pháp Bất Động Sản"
@@ -27,7 +26,21 @@
 </script>
 
 <svelte:head>
-  <MetaTags title={pageTitle} description={pageDescription} />
+  <SvelteSeo 
+    title={pageTitle}
+    description={pageDescription}
+    openGraph={{
+      title: pageTitle,
+      url: pageUrl,
+      type: 'webpage',
+      images: [{ url: `${pageUrl}/default-share-image.jpg` }]
+    }}
+    twitter={{
+      card: 'summary_large_image',
+      site: '@YourHandle',
+      title: pageTitle,
+    }}
+  />
 </svelte:head>
 
 <section class="top-section flex flex-col justify-between">

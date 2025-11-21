@@ -2,14 +2,16 @@
  * @type {import('./$types').LayoutServerLoad}
  */
 import globalContent from '../../src/data/global_content.json';
+import { slugify } from '$lib/utils/slugify';
+
 export async function load(params) {
-   const topLinks = [
-      // {label:'Home', href: '/'},
-      {label:'Tính Năng', href: '/features/'},
-      {label:'Bản Đồ Quy Hoạch', href: '/map/'},
-      {label:'Bảng Giá', href: '/pricing/'},
-      // {label:'Liên Hệ', href: '/contact/'},
-   ]
+   const selectedTopLinks = globalContent.sitemap.filter(item => item.topNav == "yes")
+   const topLinks = selectedTopLinks.map(
+      link => ({
+         label: link.title,
+         href: slugify(link.title)
+      })
+   )
 
    const subLinks = [
       {label: 'Blog', href: '/blog'},
