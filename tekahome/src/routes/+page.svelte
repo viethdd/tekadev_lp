@@ -63,13 +63,3 @@
 <section class="sixth-section flex flex-col justify-between"> 
    <HomePricing items = { home_pricing } />
 </section>
-
-<style>
-   #topSection {
-   height: auto;
-   background-color: rgba(255,0,0,.2);
-   margin: 0 auto;
-   vertical-align: middle;
-   position: relative;
-}
-</style>

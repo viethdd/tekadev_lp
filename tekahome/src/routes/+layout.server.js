@@ -5,7 +5,7 @@ import globalContent from '../../src/data/global_content.json';
 import { slugify } from '$lib/utils/slugify';
 
 export async function load(params) {
-   const selectedTopLinks = globalContent.sitemap.filter(item => item.topNav == "yes")
+   const selectedTopLinks = globalContent.sitemap.filter(item => item.topNav == "yes");
    const sortedTopLinks = selectedTopLinks.sort(
       (a,b) => {
          const orderA = a.topNavOrder || 9999;
@@ -17,28 +17,34 @@ export async function load(params) {
          label: link.title,
          href: slugify(link.title),
          order: link.topNavOrder
-      }));
+   }));
 
-   const subLinks = [
-      {label: 'Blog', href: '/blog'},
-      {label: 'Thư viện', href: '/library'},
-      {label: 'Chính sách Bảo mật', href: '/tos'},
-      {label: 'Chính sách Sử dụng', href: '/tou'},
-   ]
-   const contactLinks = [
-      {label: 'Liên hệ', href: '#contact'},
-      {label: 'Email', href: 'mailto:tekadev@gmail.com'},
-   ]
+   const selectedFooterLinks = globalContent.sitemap.filter(item => item.footerNav == "yes");
+   const sortedFooterLinks = selectedFooterLinks.sort(
+      (a,b) => {
+         const orderA = a.footerNavOrder || 9999;
+         const orderB = b.footerNavOrder || 9999;
+         return orderA - orderB
+      });
+   const footerLinks = sortedFooterLinks.map(
+      link => ({
+         label: link.title,
+         href: slugify(link.title),
+         order: link.footerNavOrder
+   }));
+
+   const footerTitle = globalContent.footer.title;
+
    return {
-      nav_links: {
-         top: topLinks,
-         footer: subLinks,
-         contact: contactLinks
-      },
-      footer_content: {
-         contact: globalContent.contact,
-         sitemap: globalContent.sitemap,
-         branding: globalContent.branding
+      topLinks: topLinks,
+      footer: {
+         links: footerLinks,
+         title: footerTitle,
+         content: {
+            contact: globalContent.contact,
+            sitemap: globalContent.sitemap,
+            branding: globalContent.branding
+         }
       }
    }
 }
