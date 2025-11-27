@@ -29,7 +29,9 @@ export async function load(params) {
    const footerLinks = sortedFooterLinks.map(
       link => ({
          label: link.title,
-         href: slugify(link.title),
+         // href: slugify(link.title),
+         href: link.href,
+         target:link.target,
          order: link.footerNavOrder
    }));
 

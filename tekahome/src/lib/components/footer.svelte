@@ -6,11 +6,10 @@
    import Icon from '$lib/components/icons.svelte';
    export let items;
    export let links;
-   export let title;
 
 </script>
 
-<footer class="seventh-section footer flex flex-col justify-between"> 
+<footer id="lien-he" class="seventh-section footer flex flex-col justify-between"> 
    <div class="contact-wrapper xl-col-left">
       {#each items.contact as item }
          <div class="contact-item">
@@ -20,9 +19,9 @@
       {/each}
    </div>
    <div class="sitemap-wrapper xl-col-center">
-      {#each links as item }
+      {#each links as link }
          <div class="sitemap-item">
-            <a href={item.href} >{item.label}</a>
+            <a target={link.target} href={link.href} >{link.label}</a>
          </div>
       {/each}
    </div>
